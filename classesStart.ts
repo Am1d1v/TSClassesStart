@@ -3,10 +3,14 @@
 class User {
     name: string;
 
-    constructor(name: string){
-        this.name = name;
+    constructor();
+    constructor(name: string);
+    constructor(name?: string){
+        if(typeof name ==='string'){
+            this.name = name
+        };
     }
 }
 
 const user = new User('Dima');
-console.log(user);
+const user1 = new User();
