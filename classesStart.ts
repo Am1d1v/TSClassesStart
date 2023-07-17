@@ -53,7 +53,17 @@ class Payment {
     getPaymentLifeTime(): number{
         return new Date().getTime() - this.createdAt.getTime();
     }
+
+    unholdPayment(){
+        if(this.status == PaymentStatus.Processed){
+            throw new Error(' Payment is Processed');
+        }
+        this.status == PaymentStatus.Reversed;
+        this.updatedAt = new Date();
+    }
 }
 
 const payment = new Payment(1);
 const time = payment.getPaymentLifeTime();
+console.log(payment);
+console.log(time);
