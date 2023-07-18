@@ -75,12 +75,31 @@ console.log(time);
 // Getter Setter
 
 class User {
-    login: string;
+    _login: string;
     password: string;
+    createdAt: Date;
 
-    setLogin(l: string){
-        this.login = 'user-' + l;
+    set login(l: string | number){
+        this._login = 'user-' + l;
+        this.createdAt = new Date();
+    }
+
+    get login(){
+        return this._login;
+    }
+
+    /*
+    set password(p: string){
+
+    }
+    */
+
+   async setPassword(p: string){
+
     }
 }
 
 const user = new User();
+user.login = 'myLogin';
+console.log(user);
+console.log(user.login);
