@@ -74,6 +74,8 @@ console.log(time);
 
 // Getter Setter
 
+/*
+
 class User {
     _login: string;
     password: string;
@@ -94,7 +96,9 @@ class User {
     }
     */
 
-   async setPassword(p: string){
+    /*
+
+    async setPassword(p: string){
 
     }
 }
@@ -103,3 +107,46 @@ const user = new User();
 user.login = 'myLogin';
 console.log(user);
 console.log(user.login);
+
+*/
+
+
+// Implements
+
+interface ILogger {
+    log(...args: string[]): void;
+    error(...args: string[]): void;
+}
+
+class Logger implements ILogger{
+    log(...args: any[]): void{
+        console.log(...args);
+    }
+
+    error(...args: string[]): void {
+        console.error(...args);
+    }
+}
+
+
+
+interface IPayable {
+    pay(paymentId: number): void;
+    price?: number;
+}
+
+interface IDeletable {
+    delete(): void;
+}
+
+class User implements IPayable, IDeletable {
+    delete(): void {
+        
+    }
+
+    pay(paymentId: number): void {
+        
+    }
+    
+}
+
