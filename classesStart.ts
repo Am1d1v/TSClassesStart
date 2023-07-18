@@ -113,6 +113,7 @@ console.log(user.login);
 
 // Implements
 
+/*
 interface ILogger {
     log(...args: string[]): void;
     error(...args: string[]): void;
@@ -149,4 +150,24 @@ class User implements IPayable, IDeletable {
     }
     
 }
+
+*/
+
+// Extends
+
+type PaymentStatus = 'new' | 'paid';
+
+class Payment {
+    id: number;
+    status: PaymentStatus = 'new';
+
+    constructor(id: number) {
+        this.id = id;
+    }
+
+    pay(){
+        this.status = 'paid';
+    }
+}
+
 

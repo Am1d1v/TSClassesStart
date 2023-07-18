@@ -30,55 +30,12 @@ const user2 = new User(30);
 const user3 = new User('Dima', 20);
 
 */
-/*
-
-enum PaymentStatus {
-    Holded,
-    Processed,
-    Reversed
-}
-
 class Payment {
-    id: number;
-    status: PaymentStatus;
-    createdAt: Date;
-    updatedAt: Date;
-
-    constructor(id: number) {
+    constructor(id) {
+        this.status = 'new';
         this.id = id;
-        this.createdAt = new Date();
-        this.status = PaymentStatus.Holded
     }
-
-    getPaymentLifeTime(): number{
-        return new Date().getTime() - this.createdAt.getTime();
-    }
-
-    unholdPayment(){
-        if(this.status == PaymentStatus.Processed){
-            throw new Error(' Payment is Processed');
-        }
-        this.status == PaymentStatus.Reversed;
-        this.updatedAt = new Date();
+    pay() {
+        this.status = 'paid';
     }
 }
-
-const payment = new Payment(1);
-const time = payment.getPaymentLifeTime();
-console.log(payment);
-console.log(time);
-
-*/
-// Getter Setter
-class User {
-    set login(l) {
-        this._login = 'user-' + l;
-    }
-    get login() {
-        return this._login;
-    }
-}
-const user = new User();
-user.login = 'myLogin';
-console.log(user);
-console.log(user.login);
