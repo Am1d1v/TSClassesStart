@@ -217,6 +217,8 @@ new Admin();
 
 */
 
+// Composition
+
 class User {
     name: string;
 
@@ -239,3 +241,28 @@ const users = new Users();
 users.push(new User('Dima'));
 users.push(new User('SomeName'));
 console.log(users.toString());
+
+class UsersList{
+    users: User[];
+
+    push(u: User){
+        this.users.push(u);
+    }
+}
+
+
+class Payment{
+    date: Date;
+}
+
+class UsersWithPayment{
+    user: User;
+    payment: Payment;
+
+    constructor(user: User, payment: Payment){
+        this.user = user;
+        this.payment = payment;
+
+    }
+}
+

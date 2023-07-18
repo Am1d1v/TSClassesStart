@@ -223,3 +223,14 @@ const users = new Users();
 users.push(new User('Dima'));
 users.push(new User('SomeName'));
 console.log(users.toString());
+class UsersList {
+    push(u) {
+        this.users.push(u);
+    }
+}
+class Payment {
+}
+class UsersWithPayment extends Payment {
+}
+const someUser = new UsersWithPayment();
+console.log(someUser);
