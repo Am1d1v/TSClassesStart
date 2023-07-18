@@ -32,6 +32,8 @@ const user3 = new User('Dima', 20);
 
 */
 
+/*
+
 enum PaymentStatus {
     Holded,
     Processed,
@@ -67,3 +69,18 @@ const payment = new Payment(1);
 const time = payment.getPaymentLifeTime();
 console.log(payment);
 console.log(time);
+
+*/
+
+// Getter Setter
+
+class User {
+    login: string;
+    password: string;
+
+    setLogin(l: string){
+        this.login = 'user-' + l;
+    }
+}
+
+const user = new User();
