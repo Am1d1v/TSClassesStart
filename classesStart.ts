@@ -155,6 +155,8 @@ class User implements IPayable, IDeletable {
 
 // Extends
 
+/*
+
 type PaymentStatus = 'new' | 'paid';
 
 class Payment {
@@ -170,4 +172,70 @@ class Payment {
     }
 }
 
+class ParsistefPayment extends Payment{
+    dataBaseID: number;
+    payedAt: Date;
 
+    constructor() {
+        const id = Math.random();
+        super(id);
+    }
+
+    save(){
+
+    }
+
+   override pay(date?: Date){
+        super.pay();
+        if(date){
+            this.payedAt = date;
+        }
+        
+    }
+}
+
+//
+
+class User {
+    name: string = 'user';
+
+    constructor() {
+        console.log(this.name);
+    }
+}
+
+class Admin extends User {
+    name: string = 'admin';
+
+    constructor() {
+        super();
+        console.log(this.name);
+    }
+}
+
+new Admin();
+
+*/
+
+class User {
+    name: string;
+
+    constructor(name: string){
+        this.name = name;
+    }
+}
+
+class Users extends Array<User>{
+    searchByName(name: string){
+        return this.filter(u => u.name === name);
+    }
+
+    override toString(): string {
+        return this.map(u => u.name).join(', ');
+    }
+}
+
+const users = new Users();
+users.push(new User('Dima'));
+users.push(new User('SomeName'));
+console.log(users.toString());
