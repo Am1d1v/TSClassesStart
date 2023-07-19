@@ -207,33 +207,53 @@ new Admin();
 
 */
 // Composition
+/*
+
 class User {
-    constructor(name) {
+    name: string;
+
+    constructor(name: string){
         this.name = name;
     }
 }
-class Users extends Array {
-    searchByName(name) {
+
+class Users extends Array<User>{
+    searchByName(name: string){
         return this.filter(u => u.name === name);
     }
-    toString() {
+
+    override toString(): string {
         return this.map(u => u.name).join(', ');
     }
 }
+
 const users = new Users();
 users.push(new User('Dima'));
 users.push(new User('SomeName'));
 console.log(users.toString());
-class UsersList {
-    push(u) {
+
+class UsersList{
+    users: User[];
+
+    push(u: User){
         this.users.push(u);
     }
 }
-class Payment {
+
+
+class Payment{
+    date: Date;
 }
-class UsersWithPayment {
-    constructor(user, payment) {
+
+class UsersWithPayment{
+    user: User;
+    payment: Payment;
+
+    constructor(user: User, payment: Payment){
         this.user = user;
         this.payment = payment;
+
     }
 }
+
+*/

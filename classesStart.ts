@@ -219,6 +219,8 @@ new Admin();
 
 // Composition
 
+/*
+
 class User {
     name: string;
 
@@ -265,4 +267,6 @@ class UsersWithPayment{
 
     }
 }
+
+*/
 

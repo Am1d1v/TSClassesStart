@@ -39,6 +39,8 @@ class EuroTrack extends Vehicle {
 
 // Static Properties
 
+/*
+
 class UserService {
     static db: any;
 
@@ -59,3 +61,25 @@ UserService.db = 'some';
 
 const newUser = new UserService();
 newUser.create();
+
+*/
+
+// Context 
+
+class Payment {
+    private date: Date = new Date();
+
+    getDate(){
+        return this.date;
+    }
+}
+
+const p = new Payment();
+
+
+const user = {
+    id: 1,
+    paymentDate: p.getDate.bind(p)
+}
+
+console.log(user.paymentDate());

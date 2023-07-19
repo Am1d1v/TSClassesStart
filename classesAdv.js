@@ -34,17 +34,42 @@ class EuroTrack extends Vehicle {
 
 */
 // Static Properties
+/*
+
 class UserService {
-    static getUser(id) {
+    static db: any;
+
+    static getUser(id: number){
         return UserService.db.findById(id);
     }
-    create() {
+
+    create(){
         UserService.db;
     }
+
+    static {
+        UserService.db = 'someDataBase';
+    }
 }
-(() => {
-    UserService.db = 'someDataBase';
-})();
+
 UserService.db = 'some';
+
 const newUser = new UserService();
 newUser.create();
+
+*/
+// Context 
+class Payment {
+    constructor() {
+        this.date = new Date();
+    }
+    getDate() {
+        return this.date;
+    }
+}
+const p = new Payment();
+const user = {
+    id: 1,
+    paymentDate: p.getDate.bind(p)
+};
+console.log(user.paymentDate());
