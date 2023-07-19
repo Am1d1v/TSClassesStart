@@ -85,24 +85,51 @@ console.log(user.paymentDate());
 
 */
 // This Typesation
+/*
+
 class UserBuilder {
-    setName(name) {
+    name: string;
+
+    setName(name: string): this{
         this.name = name;
         return this;
     }
-    isAdmin() {
+
+    isAdmin(): this is AdminBuiler{
         return this instanceof AdminBuiler;
     }
 }
+
 class AdminBuiler extends UserBuilder {
+    roles: string[];
 }
+
 const res = new UserBuilder().setName('Dima');
 const res2 = new AdminBuiler().setName('Dima');
 console.log(res);
-let user = new UserBuilder();
-if (user.isAdmin()) {
-    console.log(user); // AdminBuiler Type
+
+
+let user: UserBuilder | AdminBuiler = new UserBuilder();
+
+if(user.isAdmin()){
+    console.log(user);  // AdminBuiler Type
+} else {
+    console.log(user);  //UserBuiler Type
 }
-else {
-    console.log(user); //UserBuiler Type
+
+*/
+// Abstract Classes
+class Controller {
+    handleWithLogs(req) {
+        console.log('Start');
+        this.handle(req);
+        console.log('End');
+    }
 }
+class UserController extends Controller {
+    handle(req) {
+        console.log(req);
+    }
+}
+const c = new UserController();
+c.handleWithLogs('Request');
