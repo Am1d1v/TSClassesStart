@@ -1,13 +1,20 @@
 
 
+
+// Properties Visibility
+
+/*
+
 class Vehicle {
     make: string;
     private damages: string[];
     private _model: string;
     protected run: number;
+    #price: number;
 
     set model(m: string){
         this._model = m;
+        this.#price = 1000;
     }
 
     get moder(){
@@ -27,3 +34,28 @@ class EuroTrack extends Vehicle {
         this.run = km;
     }
 }
+
+*/
+
+// Static Properties
+
+class UserService {
+    static db: any;
+
+    static getUser(id: number){
+        return UserService.db.findById(id);
+    }
+
+    create(){
+        UserService.db;
+    }
+
+    static {
+        UserService.db = 'someDataBase';
+    }
+}
+
+UserService.db = 'some';
+
+const newUser = new UserService();
+newUser.create();
