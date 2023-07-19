@@ -90,9 +90,19 @@ class UserBuilder {
         this.name = name;
         return this;
     }
+    isAdmin() {
+        return this instanceof AdminBuiler;
+    }
 }
 class AdminBuiler extends UserBuilder {
 }
 const res = new UserBuilder().setName('Dima');
 const res2 = new AdminBuiler().setName('Dima');
 console.log(res);
+let user = new UserBuilder();
+if (user.isAdmin()) {
+    console.log(user); // AdminBuiler Type
+}
+else {
+    console.log(user); //UserBuiler Type
+}
