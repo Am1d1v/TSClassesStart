@@ -206,6 +206,7 @@ class Admin extends User {
 new Admin();
 
 */
+// Composition
 class User {
     constructor(name) {
         this.name = name;
@@ -230,7 +231,9 @@ class UsersList {
 }
 class Payment {
 }
-class UsersWithPayment extends Payment {
+class UsersWithPayment {
+    constructor(user, payment) {
+        this.user = user;
+        this.payment = payment;
+    }
 }
-const someUser = new UsersWithPayment();
-console.log(someUser);
