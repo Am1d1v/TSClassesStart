@@ -4,6 +4,7 @@ class Vehicle {
     make: string;
     private damages: string[];
     private _model: string;
+    protected run: number;
 
     set model(m: string){
         this._model = m;
@@ -20,3 +21,9 @@ class Vehicle {
 
 new Vehicle().make = 'd';
 
+
+class EuroTrack extends Vehicle {
+    setRun(km: number){
+        this.run = km;
+    }
+}
