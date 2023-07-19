@@ -66,10 +66,16 @@ newUser.create();
 
 // Context 
 
+/*
+
 class Payment {
     private date: Date = new Date();
 
-    getDate(){
+    getDate(this: Payment){
+        return this.date;
+    }
+
+    getDateArrow = () => {
         return this.date;
     }
 }
@@ -83,3 +89,25 @@ const user = {
 }
 
 console.log(user.paymentDate());
+
+*/
+
+
+// This Typesation
+
+class UserBuilder {
+    name: string;
+
+    setName(name: string): this{
+        this.name = name;
+        return this;
+    }
+}
+
+class AdminBuiler extends UserBuilder {
+    roles: string[];
+}
+
+const res = new UserBuilder().setName('Dima');
+const res2 = new AdminBuiler().setName('Dima');
+console.log(res);
